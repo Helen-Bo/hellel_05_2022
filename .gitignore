@@ -1,0 +1,9 @@
+#venv folder
+venv/
+.venv
+
+# VS code
+.vscode
+
+# PyCharm
+.idea
