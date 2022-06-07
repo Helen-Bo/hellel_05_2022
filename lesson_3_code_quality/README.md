@@ -1,5 +1,5 @@
 
-<span style="color:violet">**Addictional tools**</span>
+**Addictional tools**
 
 # Formatters
 1. PyCharm
@@ -11,3 +11,14 @@
 ## Linter
 1. Flake8
 2. pylint
+
+## Usage
+```bash
+black ./
+black --check ./
+
+flake ./
+
+isort ./
+isort --check-only ./
+```
