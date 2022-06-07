@@ -1,0 +1,19 @@
+name: Check code quality
+
+on: [push, pull_request]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+ 
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+
+      - name: Run linter
+        run: flake8 ./
+
+
