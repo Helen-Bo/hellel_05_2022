@@ -1,6 +1,6 @@
 # for i in range(10):
 #     print(i)
-
+#123
 names = ["Dima", "Sasha", "Vania", "Tania"]
 
 print("Out sourse names:")
