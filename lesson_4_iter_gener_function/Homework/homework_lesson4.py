@@ -22,13 +22,12 @@ def count_results(*args):
     print("Do you want to count the number of passwords?")
 
     my_message = input("Plese input your answer(Yes or No): ")
+    
     if my_message == "Yes":
-        with open(FILENAME, encoding="utf-8") as file:
-            for word in file.readlines():
-                if SEARCH_KEYWORD in word:
-                    results.append(word)
-        print(f"{results} , Added line: {len(results)}")
-    if my_message == "No":
+        for line in read_lines_find_user_generator():
+            results.append(line)
+        print(f"{results}, \nAdded line: {len(results)}")
+    elif my_message == "No":
         for line in read_lines_find_user_generator():
             print(line)
     else:
