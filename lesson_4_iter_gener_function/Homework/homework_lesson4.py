@@ -1,5 +1,5 @@
 from typing import Generator
-
+# 
 
 FILENAME = "./lesson_4_iter_gener_function/generators/rockyou.txt"
 SEARCH_KEYWORD = "user"
