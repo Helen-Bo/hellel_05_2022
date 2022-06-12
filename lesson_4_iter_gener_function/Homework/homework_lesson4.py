@@ -22,7 +22,7 @@ def count_results(*args):
     print("Do you want to count the number of passwords?")
 
     my_message = input("Plese input your answer(Yes or No): ")
-    
+
     if my_message == "Yes":
         for line in read_lines_find_user_generator():
             results.append(line)
