@@ -5,8 +5,7 @@ SEARCH_KEYWORD = "user"
 
 
 def read_lines_find_user_generator() -> Generator:
-
-    with open(FILENAME, encoding="utf-8") as file:
+    with open(FILENAME, encoding="utf_8_sig") as file:
         while True:
             line = file.readline()
             if not line:
@@ -15,22 +14,26 @@ def read_lines_find_user_generator() -> Generator:
                 yield line.replace("\n", "")
 
 
-def count_results(*args):
+def find_lines(line) -> bool:
+    while True:
+        questions = input(f"Do you want to add <<{line}>>? [Y/N]: ")
+
+        if questions.lower() in ["y", "yes"]:
+            return True
+        elif questions.lower() in ["n", "no", "not"]:
+            return False
+        else:
+            print("Try again!")
+
+
+def lines_amount():
     results = []
-
-    print("Do you want to count the number of passwords?")
-
-    my_message = input("Plese input your answer(Yes or No): ")
-
-    if my_message == "Yes":
-        for line in read_lines_find_user_generator():
+    for line in read_lines_find_user_generator():
+        if find_lines(line) is True:
             results.append(line)
-        print(f"{results}, \nAdded line: {len(results)}")
-    elif my_message == "No":
-        for line in read_lines_find_user_generator():
-            print(line)
-    else:
-        print("Error")
+
+    print(f"Results: {results}, \nAdded line: {len(results)}")
 
 
-count_results()
+if __name__ == "__main__":
+    lines_amount()
