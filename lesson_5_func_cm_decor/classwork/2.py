@@ -13,7 +13,6 @@
 # rep(48)
 from pprint import pprint
 
-
 team = [
     {"name": "John", "age": 20, "number": 1},
     {"name": "Mark", "age": 33, "number": 3},
