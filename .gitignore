@@ -7,3 +7,7 @@ venv/
 
 # PyCharm
 .idea
+.vscode
+
+#Python staff
+__pycache__/
