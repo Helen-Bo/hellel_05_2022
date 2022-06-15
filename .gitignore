@@ -11,3 +11,7 @@ venv/
 
 #Python staff
 __pycache__/
+
+#Big files
+
+lesson_4_iter_gener_function/generators/rockyou.txt
