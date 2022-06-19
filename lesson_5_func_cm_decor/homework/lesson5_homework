@@ -41,16 +41,22 @@ def remove_player(players: list[dict], num: int) -> None:
             return
 
 
-def update_player(num: int) -> None:
-    for player in team:
+def update_player(players: list[dict], num: int, name: str, age: int) -> None:
+    player = {"name": name, "number": num, "age": age}
+
+    if num not in {player["number"] for player in team}:
+        log(message="Player with this number does not exist")
+
+    elif num in {player["number"] for player in team}:
         if player["number"] == num:
             player.update()
             player = {
                 "name": player["name"],
                 "age": player["age"],
                 "number": player["number"],
-            }
-            team.append(player)
+                }
+        team.append(player)
+        log(message=f"Update player with #{num}")
 
 
 def main():
@@ -60,8 +66,15 @@ def main():
     add_player(num=2, name="Bob", age=39)
     add_player(num=21, name="Tom", age=32)
     add_player(num=22, name="Matthew", age=33)
+
     repr_players(team, False)
     remove_player(players=team, num=17)
+    repr_players(team, True)
+
+    update_player(team, num=10, name="Sofi", age=18)
+    repr_players(team, True)
+
+    update_player(team, num=12, name="Sofi", age=18)
     repr_players(team, True)
 
 
