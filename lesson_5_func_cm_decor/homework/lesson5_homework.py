@@ -55,7 +55,7 @@ def update_player(players: list[dict], num: int, name: str, age: int) -> None:
                 "age": player["age"],
                 "number": player["number"],
                 }
-            team.append(player)
+        team.append(player)
         log(message=f"Update player with #{num}")
 
 
@@ -67,14 +67,14 @@ def main():
     add_player(num=21, name="Tom", age=32)
     add_player(num=22, name="Matthew", age=33)
 
-    repr_players(team, False)
+    # repr_players(team, False)
     remove_player(players=team, num=17)
-    repr_players(team, True)
+    # repr_players(team, True)
 
     update_player(team, num=10, name="Sofi", age=18)
     repr_players(team, True)
 
-    update_player(team, num=12, name="Sofi", age=18)
+    update_player(team, num=1, name="Sofi", age=18)
     repr_players(team, True)
 
 
