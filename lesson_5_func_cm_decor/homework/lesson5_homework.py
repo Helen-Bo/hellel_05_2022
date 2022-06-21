@@ -1,4 +1,3 @@
-
 LOGGING = True
 
 team: list[dict] = [
@@ -8,11 +7,15 @@ team: list[dict] = [
 ]
 
 
-def repr_players(players: list[dict], player_sorter: bool, key=lambda x: x["number"]) -> None:
+def repr_players(
+    players: list[dict], player_sorter: bool, key=lambda x: x["number"]
+) -> None:
     print("Team:")
     if player_sorter is True:
         for player in sorted(players, key=key):
-            print(f"\t{player['number']} " f"Name: {player['name']}, Age: {player['age']}")
+            print(
+                f"\t{player['number']} " f"Name: {player['name']}, Age: {player['age']}"
+            )
     else:
         for player in players:
             print(f"\t{player['number']} Name: {player['name']}, Age: {player['age']}")
@@ -54,7 +57,7 @@ def update_player(players: list[dict], num: int, name: str, age: int) -> None:
                 "name": player["name"],
                 "age": player["age"],
                 "number": player["number"],
-                }
+            }
         team.append(player)
         log(message=f"Update player with #{num}")
 
