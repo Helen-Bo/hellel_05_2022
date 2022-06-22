@@ -7,15 +7,11 @@ team: list[dict] = [
 ]
 
 
-def repr_players(
-    players: list[dict], player_sorter: bool, key=lambda x: x["number"]
-) -> None:
+def repr_players(players: list[dict], player_sorter: bool, key=lambda x: x["number"]) -> None:
     print("Team:")
     if player_sorter is True:
         for player in sorted(players, key=key):
-            print(
-                f"\t{player['number']} " f"Name: {player['name']}, Age: {player['age']}"
-            )
+            print(f"\t{player['number']} " f"Name: {player['name']}, Age: {player['age']}")
     else:
         for player in players:
             print(f"\t{player['number']} Name: {player['name']}, Age: {player['age']}")
